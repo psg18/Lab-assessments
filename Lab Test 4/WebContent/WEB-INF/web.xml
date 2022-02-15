@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>LabAssessment4</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>traineecontroller</servlet-name>
+    <servlet-class>com.traineeApp.web.controller.TraineeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>traineecontroller</servlet-name>
+    <url-pattern>/traineecontroller.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>com.traineeApp.web.controller.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/loginController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LogoutController</servlet-name>
+    <servlet-class>com.traineeApp.web.controller.LogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutController</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>SecurityFilter</display-name>
+    <filter-name>SecurityFilter</filter-name>
+    <filter-class>com.traineeApp.web.filters.SecurityFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SecurityFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <context-param>
+    <param-name>driver</param-name>
+    <param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  <listener>
+    <listener-class>com.web.listeners.DbDriveListener</listener-class>
+  </listener>
+</web-app>
