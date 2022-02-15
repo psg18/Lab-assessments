@@ -37,7 +37,7 @@
 
 			<tr>
 				<td>Enter percentage:</td>
-				<td><input type="text" name="percentage" id="perId" /></td>
+				<td><input type="Number" name="percentage" id="perId" /></td>
 				<td><label id="perMsg"></label></td>
 			</tr>
 
